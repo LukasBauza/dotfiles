@@ -1,6 +1,7 @@
 set clipboard+=unnamed
 set showmode
 set showcmd
+set commentary
 
 set ignorecase
 set smartcase
@@ -13,6 +14,8 @@ set surround
 set highlightedyank
 set sneak
 set nerdtree
+set easymotion
+set notimeout
 
 set which-key
 let g:WhichKeyDesc_display = "<leader>d Display options"
@@ -26,7 +29,7 @@ let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
 map <leader>e :NERDTreeToggle<CR>
 
 " Jump around with easymotion
-map <leader>j <Plug>(easymotion-s)
+"map <leader>j <Plug>(easymotion-s)
 
 " File navigation
 map <leader>ff <action>(GotoFile)
