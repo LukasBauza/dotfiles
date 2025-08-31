@@ -1,0 +1,39 @@
+
+;; ----- amx-history -----
+(
+ kill-emacs
+ kill-buffer
+ find-file
+ delete-file
+ dired
+ counsel-imenu
+ imenu
+)
+
+;; ----- amx-data -----
+(
+ (amx-mode . 2)
+ (amx . 1)
+ (eval-region . 23)
+ (eval-buffer . 6)
+ (helpful-variable . 1)
+ (helpful-key . 1)
+ (help . 2)
+ (swiper . 3)
+ (helpful-command . 2)
+ (counsel-rg . 1)
+ (list-buffers . 1)
+ (kill-emacs . 6)
+ (find-file . 3)
+ (helpful-function . 1)
+ (scratch-buffer . 1)
+ (async-shell-command . 2)
+ (projectile-add-known-project . 2)
+ (projectile-find-file . 7)
+ (buffer-menu . 4)
+ (dired . 3)
+ (imenu . 3)
+ (counsel-imenu . 1)
+ (delete-file . 2)
+ (kill-buffer . 1)
+)

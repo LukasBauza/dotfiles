@@ -1,0 +1,1 @@
+("~/programming/visalgo/src/" "~/programming/live-power-data-pipeline/" "~/programming/visalgo/")
