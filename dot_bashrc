@@ -31,3 +31,5 @@ else
   PS1='\[$green\]\u@\h:\[$bold\]\w\[$reset\]\[$green\]\$\[$reset\] '
   distrobox enter
 fi
+
+export EDITOR="emacs";
