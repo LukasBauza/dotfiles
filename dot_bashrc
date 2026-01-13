@@ -26,10 +26,9 @@ bold=$(tput bold)
 if [ -n "$CONTAINER_ID" ]; then
   # Customise PS1 for distrobox
   PS1='📦\[$green\][\u@$CONTAINER_ID:\[$bold\]\w\[$reset\]\[$green\]]\$\[$reset\] '
-  eval "$(zoxide init bash)"
 else
   PS1='\[$green\]\u@\h:\[$bold\]\w\[$reset\]\[$green\]\$\[$reset\] '
-  distrobox enter
+  eval "$(zoxide init bash)"
 fi
 
-export EDITOR="emacs";
+export EDITOR="neovim";
