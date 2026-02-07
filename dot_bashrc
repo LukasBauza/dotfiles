@@ -32,3 +32,5 @@ else
 fi
 
 export EDITOR="neovim";
+
+eval "$(direnv hook bash)"
