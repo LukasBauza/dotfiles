@@ -31,6 +31,9 @@ else
   eval "$(zoxide init bash)"
 fi
 
+# TODO: Need to setup this part to be nixos only
+# ----------------------------------------------
 export EDITOR="nvim";
 
 eval "$(direnv hook bash)"
+# ----------------------------------------------
