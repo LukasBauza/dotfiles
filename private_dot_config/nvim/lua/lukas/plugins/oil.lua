@@ -9,8 +9,8 @@ return {
       show_hiddent = true,
     }
   },
-  config = function()
-    require("oil").setup()
+  config = function(_, opts)
+    require("oil").setup(opts)
 
     vim.keymap.set("n", "<leader>fe", "<CMD>Oil<CR>", { desc = "Toggle float oil." })
   end
