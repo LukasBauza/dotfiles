@@ -31,6 +31,6 @@ else
   eval "$(zoxide init bash)"
 fi
 
-export EDITOR="neovim";
+export EDITOR="nvim";
 
 eval "$(direnv hook bash)"
