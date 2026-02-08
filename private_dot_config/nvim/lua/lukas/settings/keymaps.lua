@@ -32,6 +32,8 @@ vim.keymap.set("n", "<leader>wh", "<C-w>s", { desc = "Split window horizontally.
 vim.keymap.set("n", "<leader>w=", "<C-w>=", { desc = "Make splits equal size." })
 vim.keymap.set("n", "<leader>wx", "<C-w>x", { desc = "Close current split window." })
 
+vim.keymap.set("n", "<leader>bx", "<CMD>bdelete<CR>", { desc = "Close the current buffer." })
+
 vim.keymap.set("n", "<leader>fp", function()
   local filePath = vim.fn.expand("%:~") -- Gets the file path relative to the home directory
   vim.fn.setreg("+", filePath) -- Copy the file path to the clipboard register
