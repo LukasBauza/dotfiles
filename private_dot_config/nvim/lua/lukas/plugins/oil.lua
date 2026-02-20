@@ -9,9 +9,7 @@ return {
       show_hiddent = true,
     }
   },
-  config = function(_, opts)
-    require("oil").setup(opts)
-
-    vim.keymap.set("n", "<leader>fe", "<CMD>Oil<CR>", { desc = "Toggle float oil." })
-  end
+  keys = {
+    { "<leader>fe", "<CMD>Oil --float<CR>", desc = "Open parent directory." }
+  }
 }
