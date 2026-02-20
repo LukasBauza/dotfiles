@@ -32,6 +32,7 @@ else
 fi
 
 # TODO: Need to setup this part to be nixos only
+# could be done with chezmoi templates instead?
 # ----------------------------------------------
 export EDITOR="nvim";
 
