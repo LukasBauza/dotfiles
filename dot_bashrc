@@ -16,6 +16,7 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# TODO: Is tput even needed for setting cokours?
 red=$(tput setaf 1)
 green=$(tput setaf 2)
 blue=$(tput setaf 4)
