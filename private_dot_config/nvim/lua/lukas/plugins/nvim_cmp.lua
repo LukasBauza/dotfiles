@@ -26,13 +26,19 @@ return {
       }),
       sources = cmp.config.sources({
         -- Order is the ranking of the completion priority.
+        -- { name = "gh_issues" },
         { name = "nvim_lua" },
         { name = "nvim_lsp" },
         { name = "path" },
         { name = "luasnip" },
         -- keyword_length = 5, added within the set, sets the minimum length of the keyword for ocmpletion to occur.
         { name = "buffer" }
-      })
+      }),
+      snippets = cmp.config.sources({
+        expand = function(args)
+          require("luasnip").lsp_expand(args.body)
+        end
+      }),
     }
   end
 }
