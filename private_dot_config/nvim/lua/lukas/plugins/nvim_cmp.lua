@@ -39,6 +39,11 @@ return {
           require("luasnip").lsp_expand(args.body)
         end
       }),
+      experimental = {
+        -- Not sure what this is.
+        native_menu = false,
+        ghost_text = false
+      }
     }
   end
 }
