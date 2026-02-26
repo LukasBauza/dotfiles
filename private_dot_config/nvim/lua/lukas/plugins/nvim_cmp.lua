@@ -11,10 +11,12 @@ return {
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lua",
     "L3MON4D3/LuaSnip",
-    "saadparwaiz1/cmp_luasnip"
+    "saadparwaiz1/cmp_luasnip",
+    "onsails/lspkind.nvim"
   },
   opts = function()
     local cmp = require("cmp")
+    local lspkind = require("lspkind")
 
     return {
       mapping = cmp.mapping.preset.insert({
@@ -39,6 +41,19 @@ return {
           require("luasnip").lsp_expand(args.body)
         end
       }),
+      formatting = {
+        format = lspkind.cmp_format {
+          with_text = true,
+          menu = {
+            buffer = "[buf]",
+            nvim_lsp = "[LSP]",
+            nvim_lua = "[api]",
+            path = "[path]",
+            luasnip = "[snip]",
+            gh_issues = "[issues]"
+          }
+        }
+      },
       experimental = {
         -- Not sure what this is.
         view_entries = "native",
