@@ -13,7 +13,9 @@ return {
     "L3MON4D3/LuaSnip",
     "rafamadriz/friendly-snippets",
     "saadparwaiz1/cmp_luasnip",
-    "onsails/lspkind.nvim"
+    "onsails/lspkind.nvim",
+    -- TODO: Still needs to be configured.
+    "brenoprate10/nvim-highlight-colors"
   },
   opts = function()
     local cmp = require("cmp")
