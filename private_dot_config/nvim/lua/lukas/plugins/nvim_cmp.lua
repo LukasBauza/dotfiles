@@ -36,11 +36,11 @@ return {
         -- keyword_length = 5, added within the set, sets the minimum length of the keyword for ocmpletion to occur.
         { name = "buffer" }
       }),
-      snippets = cmp.config.sources({
+      snippet = {
         expand = function(args)
           require("luasnip").lsp_expand(args.body)
         end
-      }),
+      },
       formatting = {
         format = lspkind.cmp_format {
           with_text = true,
