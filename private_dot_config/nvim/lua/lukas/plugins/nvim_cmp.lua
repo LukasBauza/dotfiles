@@ -41,7 +41,7 @@ return {
       }),
       experimental = {
         -- Not sure what this is.
-        native_menu = false,
+        view_entries = "native",
         ghost_text = false
       }
     }
