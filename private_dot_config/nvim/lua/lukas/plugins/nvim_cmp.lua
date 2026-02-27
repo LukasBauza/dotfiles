@@ -15,7 +15,8 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "onsails/lspkind.nvim",
     -- TODO: Still needs to be configured.
-    "brenoprate10/nvim-highlight-colors"
+    "brenoprate10/nvim-highlight-colors",
+    "nvim-treesitter/nvim-treesitter"
   },
   opts = function()
     local cmp = require("cmp")
@@ -25,8 +26,10 @@ return {
       mapping = cmp.mapping.preset.insert({
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        ["<C-j>"] = cmp.mapping(select_next_item),
+        ["<C-k>"] = cmp.mapping(select_previous_item),
         -- ["<C-e>"] = cmp.mapping.close(),
-        ["<C-y>"] = cmp.mapping.confirm( { select = true }),
+        ["<C-y>"] = cmp.mapping.confirm( { select = true } ),
         ["<C-Space>"] = cmp.mapping.complete()
       }),
       sources = cmp.config.sources({
