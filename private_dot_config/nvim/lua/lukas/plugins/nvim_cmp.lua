@@ -21,6 +21,10 @@ return {
   opts = function()
     local cmp = require("cmp")
     local lspkind = require("lspkind")
+    local luasnip = require("luasnip")
+
+    -- TODO: Should this be in a seperate file?
+    require("luasnip.loaders.from_vscode").lazy_load()
 
     return {
       mapping = cmp.mapping.preset.insert({
