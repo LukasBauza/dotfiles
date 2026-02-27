@@ -44,6 +44,19 @@ return {
       "xml",
       "yaml",
     }
-  }
+  },
   -- TODO: Need to add keybinds for using treesitter for selections.
+  {
+    "windwp/nvim-ts-autotag",
+    ft = { "html", "xml", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+    config = function ()
+      require("nvim-ts-auotag").setup({
+        opts = {
+          enable_close = true,
+          enable_rename = true,
+          enable_close_on_slash = false,
+        },
+      })
+    end
+  }
 }
