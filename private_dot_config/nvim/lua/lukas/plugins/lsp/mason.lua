@@ -34,7 +34,6 @@ return {
 				"rust_analyzer",
 				-- web
 				"cssls",
-				-- "emmet_ls",
 				"emmet_language_server",
 			},
 
