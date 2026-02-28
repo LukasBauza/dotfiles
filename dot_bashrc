@@ -10,6 +10,10 @@
 # here, since multilingual X sessions would not work properly if LANG is over-
 # ridden in every subshell.
 
+if [ -f ~/.bash_profile ]; then
+    source ~/.bash_profile
+fi
+
 test -s ~/.alias && . ~/.alias || true
 
 export NVM_DIR="$HOME/.config/nvm"
