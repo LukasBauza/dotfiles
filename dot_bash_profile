@@ -36,3 +36,4 @@ GUIX_PROFILE="/home/lukas/.guix-profile"
 
 export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 
+export PATH="$HOME/.npm-global/bin:$PATH"
