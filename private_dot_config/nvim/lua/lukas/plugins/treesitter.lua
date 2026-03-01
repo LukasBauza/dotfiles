@@ -1,6 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	name = "nvim-tressitter",
+	lazy = false,
 	build = ":TSUpdate",
 	opts = {
 		indent = { enable = true },
