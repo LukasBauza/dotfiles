@@ -7,6 +7,19 @@ export ZSH="$HOME/.oh-my-zsh"
 export FZF_BASE=/usr/bin/fzf
 # export FZF_COMPLETION_TRIGGER="~~"
 
+export PATH="$PATH:/home/lukas/.emacs.d/bin/"
+
+# Added by Toolbox App
+export PATH="$PATH:/home/lukas/.local/share/JetBrains/Toolbox/scripts"
+
+export EDITOR="/usr/bin/nvim"
+
+GUIX_PROFILE="/home/lukas/.guix-profile"
+     . "$GUIX_PROFILE/etc/profile"
+
+export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+
+export PATH="$HOME/.npm-global/bin:$PATH"
 zstyle ":omz:plugins:eza" icons yes
 
 # Set name of the theme to load --- if set to "random", it will
