@@ -26,7 +26,7 @@ let g:WhichKeyDesc_fullscreen = "<leader>df Toggle full screen"
 "" Quickscope plugin or sneak.
 
 " Open NERDTree (use q to exit)
-map <leader>e :NERDTreeToggle<CR>
+map <leader>fe :NERDTreeToggle<CR>
 
 " Jump around with easymotion
 "map <leader>j <Plug>(easymotion-s)
