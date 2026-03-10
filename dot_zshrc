@@ -14,11 +14,11 @@ export PATH="$PATH:/home/lukas/.local/share/JetBrains/Toolbox/scripts"
 
 export EDITOR="/usr/bin/nvim"
 
-GUIX_PROFILE="/home/lukas/.guix-profile"
-     . "$GUIX_PROFILE/etc/profile"
-
-export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
-
+# GUIX_PROFILE="/home/lukas/.guix-profile"
+#      . "$GUIX_PROFILE/etc/profile"
+#
+# export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+#
 export PATH="$HOME/.npm-global/bin:$PATH"
 zstyle ":omz:plugins:eza" icons yes
 
