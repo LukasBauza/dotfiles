@@ -2,6 +2,7 @@ set clipboard+=unnamed
 set showmode
 set showcmd
 set commentary
+set relativenumber
 
 set ignorecase
 set smartcase
