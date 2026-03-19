@@ -123,10 +123,7 @@
 
 (use-package general
   :config
-  (general-evil-setup t)
-  (general-create-definer my/leader-keys
-    :states '(normal visual)
-    :prefix "SPC"))
+  (general-evil-setup t))
 
 (use-package helpful)
 ;; Lookup functions and macros
