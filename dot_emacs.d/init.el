@@ -159,4 +159,10 @@
 :states '(normal visual)
 :prefix "SPC"
 "ff" 'find-file)
+
+(general-define-key
+:states '(normal visual)
+:prefix "SPC"
+"fz" 'counsel-fzf)
+
 ;;; init.el ends here
