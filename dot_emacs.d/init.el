@@ -153,20 +153,13 @@
 
 (which-key-mode 1)
 
-;;(general-define-key
-;; :states '(normal visual)
-;; :prefix "SPC"
-;; "bck" 'kill-current-buffer)
-;;
-;;(general-define-key
-;; :states '(normal visual)
-;; :prefix "SPC"
-;; "ff" 'find-file)
+(general-define-key
+:states '(normal visual)
+:prefix "SPC"
+"bck" 'kill-current-buffer)
 
-(my/leader-keys
- "b" '(:ignore t :which-key "Buffer")
- "bck" '('kill-current-buffer :which-key "Kill current buffer")
-
- "f" '(:ignore t :which-key "File")
- "ff" '('find-file :which-key "Find file))
+(general-define-key
+:states '(normal visual)
+:prefix "SPC"
+"ff" 'find-file)
 ;;; init.el ends here
