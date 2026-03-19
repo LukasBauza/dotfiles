@@ -30,7 +30,8 @@
   (evil-collection-init))
 
 (evil-set-leader 'normal (kbd "SPC"))
-(evil-define-key 'normal 'global (kbd "<leader>ff") 'find-file)
+;;(evil-define-key 'normal 'global (kbd "<leader>ff") 'find-file)
+;;(evil-define-key 'normal 'global (kbd "<leader>bkc") 'kill-current-buffer)
 
 (use-package exec-path-from-shell
   :config
@@ -39,7 +40,7 @@
 (use-package doom-themes
   :init
   ;; TODO: For some reason, this one always asks to load the theme, maybe better in config?
-  (load-theme 'doom-ayu-dark)
+  ;;(load-theme 'doom-ayu-dark)
   :custom
   ;; Global settings (defaults)
   (doom-themes-enable-bold t)   ; if nil, bold is universally disabled
@@ -120,6 +121,13 @@
   :init
   (amx-mode 1))
 
+(use-package general
+  :config
+  (general-evil-setup t)
+  (general-create-definer my/leader-keys
+    :states '(normal visual)
+    :prefix "SPC"))
+
 (use-package helpful)
 ;; Lookup functions and macros
 (global-set-key (kbd "C-h f") #'helpful-callable)
@@ -140,3 +148,25 @@
 ;; - prescient: Used for sorting and filtering
 ;;
 ;; - Need to delete files more easily within a directory/project.
+
+(load-theme 'modus-vivendi-deuteranopia)
+
+(which-key-mode 1)
+
+;;(general-define-key
+;; :states '(normal visual)
+;; :prefix "SPC"
+;; "bck" 'kill-current-buffer)
+;;
+;;(general-define-key
+;; :states '(normal visual)
+;; :prefix "SPC"
+;; "ff" 'find-file)
+
+(my/leader-keys
+ "b" '(:ignore t :which-key "Buffer")
+ "bck" '('kill-current-buffer :which-key "Kill current buffer")
+
+ "f" '(:ignore t :which-key "File")
+ "ff" '('find-file :which-key "Find file))
+;;; init.el ends here
