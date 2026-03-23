@@ -113,8 +113,12 @@
   :config
   (setq lsp-prefer-flymake nil)) ;; Flymake is outdated
 
+(use-package magit)
+
 ;; TODO: This is an alternative usecase to '/' search, need to setup keybindings.
 (use-package swiper)
+
+(use-package zoxide)
 
 ;; Better M-x command, shows more recent commands.
 (use-package amx
@@ -147,6 +151,9 @@
 ;; - Need to delete files more easily within a directory/project.
 
 (load-theme 'modus-vivendi-deuteranopia)
+
+(global-display-line-numbers-mode t)
+(setq display-line-numbers-type 'relative)
 
 (which-key-mode 1)
 
