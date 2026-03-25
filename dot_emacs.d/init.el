@@ -107,11 +107,18 @@
   (add-hook 'prog-mode-hook 'flycheck-mode) ;; always link code
   (add-hook 'after-init-hook #'global-flycheck-mode))
 
+(use-package flycheck-rust
+  :config
+  (with-eval-after-load 'rust-mode
+    (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)))
+
 ;; Package for interacting with language servers
 (use-package lsp-mode
   :commands lsp
   :config
   (setq lsp-prefer-flymake nil)) ;; Flymake is outdated
+
+(use-package rust-mode)
 
 (use-package magit)
 
