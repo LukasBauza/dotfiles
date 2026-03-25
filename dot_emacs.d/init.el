@@ -109,7 +109,7 @@
 
 (use-package flycheck-rust
   :config
-  (with-eval-after-load 'rust-mode
+  (with-eval-after-load 'rust-ts-mode
     (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)))
 
 ;; Package for interacting with language servers
@@ -117,8 +117,6 @@
   :commands lsp
   :config
   (setq lsp-prefer-flymake nil)) ;; Flymake is outdated
-
-(use-package rust-mode)
 
 (use-package magit)
 
