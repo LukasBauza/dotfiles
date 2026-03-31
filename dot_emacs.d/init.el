@@ -183,7 +183,7 @@
 (general-define-key
 :states '(normal visual)
 :prefix "SPC"
-"bck" 'kill-current-buffer)
+"bk" 'kill-current-buffer)
 
 (general-define-key
 :states '(normal visual)
