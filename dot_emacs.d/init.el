@@ -114,7 +114,10 @@
 
 ;; Package for interacting with language servers
 (use-package lsp-mode
-  :commands lsp
+  :commands (lsp lsp-deferred)
+  :hook
+  ((rust-ts-mode . lsp-deferred)
+   (lsp-mode . lsp-enable-which-key-integration))
   :config
   (setq lsp-prefer-flymake nil)) ;; Flymake is outdated
 
