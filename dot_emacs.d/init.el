@@ -121,6 +121,8 @@
   :config
   (setq lsp-prefer-flymake nil)) ;; Flymake is outdated
 
+(use-package lsp-ui)
+
 (use-package magit)
 
 ;; TODO: This is an alternative usecase to '/' search, need to setup keybindings.
