@@ -188,6 +188,11 @@
 (general-define-key
 :states '(normal visual)
 :prefix "SPC"
+"bm" 'buffer-menu)
+
+(general-define-key
+:states '(normal visual)
+:prefix "SPC"
 "ff" 'find-file)
 
 (general-define-key
