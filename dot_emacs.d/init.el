@@ -176,6 +176,8 @@
 	(typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
 	(yaml "https://github.com/ikatyang/tree-sitter-yaml")))
 
+(set-face-attribute 'default nil :font "Intone Mono Nerd Font Mono" :height 120)
+
 (which-key-mode 1)
 
 (general-define-key
