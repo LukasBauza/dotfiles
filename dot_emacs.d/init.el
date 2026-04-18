@@ -133,6 +133,8 @@
   :config
   (general-evil-setup t))
 
+(use-package org-journal)
+
 (use-package helpful)
 ;; Lookup functions and macros
 (global-set-key (kbd "C-h f") #'helpful-callable)
