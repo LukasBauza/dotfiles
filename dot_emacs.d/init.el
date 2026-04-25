@@ -176,11 +176,9 @@
 	(typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
 	(yaml "https://github.com/ikatyang/tree-sitter-yaml")))
 
-;; Install tresitter grammers
-(dolist (source treesit-language-source-alist)
-  (let ((lang (car source)))
-    (unless (treesit-language-available-p lang)
-      (treesit-install-language-grammar lang))))
+;; Install the treesitter languages.
+(mapc #'treesit-install-language-grammar
+      (mapcar #'car treesit-language-source-alist))
 
 ;; Enable ts-mode by file extension
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-ts-mode))
