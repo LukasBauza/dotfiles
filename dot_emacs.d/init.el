@@ -195,7 +195,7 @@
   (let ((dir default-directory))
     (start-process "terminal" nil "cosmic-term" "--working-directory" dir)))
 
-(defun my/open-termina-project-root ()
+(defun my/open-terminal-project-root ()
   (interactive)
   (let ((dir (project-root (project-current t))))
     (start-process "terminal" nil "cosmic-term" "--working-directory" dir)))
@@ -219,5 +219,15 @@
 :states '(normal visual)
 :prefix "SPC"
 "fz" 'counsel-fzf)
+
+(general-define-key
+ :states '(normal visual)
+ :prefix "SPC"
+ "th" #'my/open-terminal-here)
+
+(general-define-key
+ :states '(normal visual)
+ :prefix "SPC"
+ "tp" #'my/open-terminal-project-root)
 
 ;;; init.el ends here
