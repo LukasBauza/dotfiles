@@ -77,14 +77,18 @@
 ;; they are implemented.
 
 (defun my/open-system-terminal ()
-  "Open the system terminal in the current directory."
+  "Open the system terminal in the current directory without popping up Emacs buffers."
   (interactive)
-  (cond
-   ;; Linux (assumes cosmic-term)
-   ((eq system-type 'gnu/linux)
-    (shell-command "cosmic-term &"))
-   ((eq system-type 'windows-nt)
-    (shell-command "start cmd /K cd /d %cd%"))))
+  (let ((dir default-directory))
+    (cond
+     ;; Linux (cosmic-term)
+     ((eq system-type 'gnu/linux)
+      ;; 'start-process' doesn't create a buffer unless you tell it to
+      (start-process "cosmic-terminal-process" nil "cosmic-term" "--workdir" dir))
+
+     ;; Windows
+     ((eq system-type 'windows-nt)
+      (shell-command (concat "start cmd /K cd /d " (shell-quote-argument dir)))))))
 
 (map! :leader
       :desc "Open system terminal"
