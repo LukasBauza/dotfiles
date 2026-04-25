@@ -190,6 +190,16 @@
 
 (which-key-mode 1)
 
+(defun my/open-terminal-here ()
+  (interactive)
+  (let ((dir default-directory))
+    (start-process "terminal" nil "cosmic-term" "--working-directory" dir)))
+
+(defun my/open-termina-project-root ()
+  (interactive)
+  (let ((dir (project-root (project-current t))))
+    (start-process "terminal" nil "cosmic-term" "--working-directory" dir)))
+
 (general-define-key
 :states '(normal visual)
 :prefix "SPC"
