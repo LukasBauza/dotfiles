@@ -17,11 +17,12 @@
 # options using:
 #     config nu --doc | nu-highlight | less -R
 
-$env.config.buffer_editor = "nvim"
-
 if (which zoxide | is-not-empty) {
   mkdir ($nu.default-config-dir | path join "autoload")
 
   let zoxide_cache = ($nu.default-config-dir | path join "autoload/zoxide.nu")
   zoxide init nushell | save -f $zoxide_cache
 }
+
+$env.config.buffer_editor = "nvim"
+$enf.config.show_banner = false
