@@ -25,4 +25,4 @@ if (which zoxide | is-not-empty) {
 }
 
 $env.config.buffer_editor = "nvim"
-$enf.config.show_banner = false
+$env.config.show_banner = false
