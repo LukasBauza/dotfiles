@@ -34,7 +34,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-badger)
+(setq doom-theme 'doom-1337)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -93,3 +93,24 @@
 (map! :leader
       :desc "Open system terminal"
       "o t" #'my/open-system-terminal)
+
+;; (after! gptel
+;;   (gptel-make-openai "Mistral Studio"
+;;     :host "api.mistral.ai"
+;;     :endpoint "/v1/chat/completions"
+;;     :protocol "https"
+;;     :key "Q3N6VPzrl4OY5YArtpaGTyZtvGtxe77r"
+;;     :models '("mistral-small")))
+
+;; TODO: Need to setup so it isn't the default, and that I can choose other models.
+(after! gptel
+  (setq gptel-backend
+        (gptel-make-openai "Mistral Studio"
+          :host "api.mistral.ai"
+          :endpoint "/v1/chat/completions"
+          :stream t
+          :key "Q3N6VPzrl4OY5YArtpaGTyZtvGtxe77r"
+          :models '("mistral-medium-2508" "codestral-2508")))
+
+  ;; Make absolutely sure gptel knows this is the model to use
+  (setq gptel-model "codestral-2508"))
