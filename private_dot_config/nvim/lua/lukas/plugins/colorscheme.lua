@@ -1,21 +1,10 @@
 return {
   {
-    "rebelot/kanagawa.nvim",
-    priority = 1000, -- Load this before other plugins
-    opts = {
-      colors = {
-        theme = {
-          all = {
-            ui = {
-              bg_gutter = "none",
-            },
-          },
-        },
-      },
-    },
+    "oonamo/ef-themes.nvim",
+    priority = 1000, -- Loads this before other plugins.
     config = function(_, opts)
-      require("kanagawa").setup(opts)
-      vim.cmd("colorscheme kanagawa")
+      require("ef-themes")
+      vim.cmd("colorscheme ef-dark")
     end,
-  },
+  }
 }

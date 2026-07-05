@@ -2,10 +2,46 @@ return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
+    "nvim-lua/plenary.nvim",
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 	},
 	config = function()
+    vim.lsp.config("nushell", {
+      cmd = { "nu", "--lsp" },
+      filetypes = { "nu" },
+      root_markers = { ".git" },
+    })
+
+    vim.lsp.config("rust_analyzer", {
+      cmd = { "rust-analyzer" },
+      filetypes = { "rust" },
+      root_markers = { "Cargo.toml", ".git" },
+    })
+
+    vim.lsp.config("tsserver", {
+      cmd = { "typescript-language-server", "--stdio" },
+      filetypes = {
+        "javascipt",
+        "typescript",
+        "javascriptreact",
+        "typescriptreact",
+      },
+      root_markers = { "package.json", "tsconfig.json", ".git" },
+    })
+
+    vim.lsp.enable({
+      "nushell",
+      "rust_analyzer",
+      "tsserver",
+    })
+
+    vim.diagnostic.config({
+      virtual_text = true,
+      underline = true,
+      update_in_insert = false,
+    })
+
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 			callback = function(ev)
@@ -51,11 +87,6 @@ return {
 					vim.lsp.buf.signature_help()
 				end, opts)
 			end,
-			vim.diagnostic.config({
-				virtual_text = true,
-				underline = true,
-				update_in_insert = false,
-			}),
 		})
 	end,
 }

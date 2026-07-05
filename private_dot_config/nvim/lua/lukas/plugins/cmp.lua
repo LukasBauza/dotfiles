@@ -15,7 +15,7 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "onsails/lspkind.nvim",
     -- TODO: Still needs to be configured.
-    "brenoprate10/nvim-highlight-colors",
+    -- "brenoprate10/nvim-highlight-colors",
     "nvim-treesitter/nvim-treesitter"
   },
   opts = function()
