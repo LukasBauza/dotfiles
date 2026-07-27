@@ -5,13 +5,3 @@ fi
 if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
-
-# Only trigger if:
-# - 'nushell' is not the parent process of this shell
-# - We did not call: bash -c '...'
-# - The fish binary exists and is executable
-# TODO: Needs to not be associated with GUIX only.
-if [[ $(ps --no-header --pid=$PPID --format=comm) != "nu" && -z ${BASH_EXECUTION_STRING} && -x "$HOME/.guix-home/profile/bin/nu" ]]; then
-  shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
-  exec nu $LOGIN_OPTION
-fi
