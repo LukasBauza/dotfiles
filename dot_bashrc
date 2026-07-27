@@ -1,32 +1,8 @@
-# Sample .bashrc for SUSE Linux
-# Copyright (c) SUSE Software Solutions Germany GmbH
-
-# There are 3 different types of shells in bash: the login shell, normal shell
-# and interactive shell. Login shells read ~/.profile and interactive shells
-# read ~/.bashrc; in our setup, /etc/profile sources ~/.bashrc - thus all
-# settings made here will also take effect in a login shell.
-#
-# NOTE: It is recommended to make language settings in ~/.profile rather than
-# here, since multilingual X sessions would not work properly if LANG is over-
-# ridden in every subshell.
-
-if [ -f ~/.bash_profile ]; then
-    source ~/.bash_profile
-fi
-
-test -s ~/.alias && . ~/.alias || true
-
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# TODO: Is tput even needed for setting cokours?
 red=$(tput setaf 1)
 green=$(tput setaf 2)
 blue=$(tput setaf 4)
 reset=$(tput sgr0)
 bold=$(tput bold)
-#PS1='\[$green\]\u@\h\:\[$bold\]\w\[$reset\]\[$green\]\$\[$reset\] '
 
 if [ -n "$CONTAINER_ID" ]; then
   # Customise PS1 for distrobox
@@ -36,13 +12,15 @@ else
   eval "$(zoxide init bash)"
 fi
 
-# TODO: Need to setup this part to be nixos only
-# could be done with chezmoi templates instead?
-# ----------------------------------------------
-export EDITOR="nvim";
-
-eval "$(direnv hook bash)"
-# ----------------------------------------------
-
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --bash)"
+
+# Only trigger if:
+# - 'nushell' is not the parent process of this shell
+# - We did not call: bash -c '...'
+# - The fish binary exists and is executable
+# TODO: Needs to not be associated with GUIX only.
+if [[ $(ps --no-header --pid=$PPID --format=comm) != "nu" && -z ${BASH_EXECUTION_STRING} && -x "$HOME/.guix-home/profile/bin/nu" ]]; then
+  shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=''
+  exec nu $LOGIN_OPTION
+fi
