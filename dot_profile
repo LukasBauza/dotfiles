@@ -1,6 +1,22 @@
-export PATH="$PATH:/home/lukas/.emacs.d/bin/"
-export PATH="$PATH:/home/lukas/.local/share/JetBrains/Toolbox/scripts"
-export EDITOR="/usr/bin/nvim"
+if [ -d "$HOME/.emacs.d/bin" ]; then
+  export PATH="$PATH:$HOME/.emacs.d/bin/"
+fi
+
+if [ -d "$HOME/.local/share/JetBrains/Toolbox/scripts" ]; then
+  export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
+fi
+
+if [ -d "/usr/bin/nvim" ]; then
+  export EDITOR="/usr/bin/nvim"
+fi
+
+if [ -d "$HOME/.local/share/flatpak/exports/share" ]; then
+  export XDG_DATA_DIRS="$XDG_DATA_DIRS:$HOME/.local/share/flatpak/exports/share"
+fi
+
+if [ -d "/var/lib/flatpak/exports/share" ]; then
+  export XDG_DATA_DIRS="$XDG_DATA_DIRS:$HOME/var/lib/flatpak/exports/share"
+fi
 
 # Guix Home (only if present)
 if [ -f "$HOME/.guix-home/setup-environment" ]; then
