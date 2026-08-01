@@ -1,8 +1,10 @@
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-blue=$(tput setaf 4)
-reset=$(tput sgr0)
-bold=$(tput bold)
+if command -v tput >/dev/null 2>&1; then
+  red=$(tput setaf 1)
+  green=$(tput setaf 2)
+  blue=$(tput setaf 4)
+  reset=$(tput sgr0)
+  bold=$(tput bold)
+fi
 
 if [ -n "$CONTAINER_ID" ]; then
   # Customise PS1 for distrobox
