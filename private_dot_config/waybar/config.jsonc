@@ -1,0 +1,6 @@
+"pulseaudio": {
+  "format": "Volume: {volumne}%",
+  "format-muted": "Muted",
+  "on-click": "pavucontrol",
+  "on-click-right": "wpctl set-default $(wpctl status | grep -A 10 'Sinks:' | grep -v '*' | awk '/[0-9]+\./ {print $2; exit}' | tr -d '.')"
+}
