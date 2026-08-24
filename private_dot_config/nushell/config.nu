@@ -26,3 +26,4 @@ if (which zoxide | is-not-empty) {
 
 $env.config.buffer_editor = "nvim"
 $env.config.show_banner = false
+$env.config.hooks.env_change.PWD = [{ print (ls) }]
