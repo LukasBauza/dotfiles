@@ -7,6 +7,19 @@ return {
 		{ "antosha417/nvim-lsp-file-operations", config = true },
 	},
 	config = function()
+    vim.lsp.config("markdown_oxide", {
+      cmd = { "markdown-oxide" },
+      filetypes = { "markdown" },
+      root_markers = { ".git", ".obsidian", ".moxide.toml" },
+      capabilities = {
+        workspace = {
+          didChangeWatchedFiles = {
+            dynamicRegistration = true,
+          }
+        }
+      }
+    })
+
     vim.lsp.config("nushell", {
       cmd = { "nu", "--lsp" },
       filetypes = { "nu" },
@@ -22,7 +35,7 @@ return {
     vim.lsp.config("tsserver", {
       cmd = { "typescript-language-server", "--stdio" },
       filetypes = {
-        "javascipt",
+        "javascript",
         "typescript",
         "javascriptreact",
         "typescriptreact",
@@ -34,6 +47,7 @@ return {
       "nushell",
       "rust_analyzer",
       "tsserver",
+      "markdown_oxide",
     })
 
     vim.diagnostic.config({
