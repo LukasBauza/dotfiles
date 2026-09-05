@@ -18,6 +18,10 @@ if [ -d "/var/lib/flatpak/exports/share" ]; then
   export XDG_DATA_DIRS="$XDG_DATA_DIRS:$HOME/var/lib/flatpak/exports/share"
 fi
 
+if [ -f "$HOME/.cargo/env ]; then
+  . "$HOME/.cargo/env"
+fi
+
 if [ -f ~/.profile ]; then
   . ~/.profile
 fi
