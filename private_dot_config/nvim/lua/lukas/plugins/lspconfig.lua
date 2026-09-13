@@ -5,6 +5,7 @@ return {
     "nvim-lua/plenary.nvim",
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
+    "ibhagwan/fzf-lua",
 	},
 	config = function()
     vim.lsp.config("markdown_oxide", {
@@ -50,9 +51,29 @@ return {
       "markdown_oxide",
     })
 
+    vim.api.nvim_create_autocmd("InsertEnter", {
+      pattern = '*',
+      callback = function()
+        vim.diagnostic.config({
+          virtual_text = false,
+          underline = false,
+        })
+      end
+    })
+
+    vim.api.nvim_create_autocmd("InsertLeave", {
+      pattern = '*',
+      callback = function()
+        vim.diagnostic.config({
+          virtual_text = true,
+          underline = true,
+        })
+      end
+    })
+
     vim.diagnostic.config({
-      virtual_text = true,
-      underline = true,
+      -- virtual_text = true,
+      -- underline = true,
       update_in_insert = false,
     })
 
